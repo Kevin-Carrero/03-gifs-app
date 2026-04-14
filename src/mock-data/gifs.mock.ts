@@ -1,19 +1,6 @@
-export interface Gif {
-  id: string;
-  title: string;
-  url: string;
-  width: number;
-  height: number;
-}
+import type { Gif } from "../gifs/components/interfaces/gif.interface";
 
 export const mockGifs: Gif[] = [
-  {
-    id: '1',
-    title: "Superman's Cake",
-    url: 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWVxbHY0dncxMHJlZXRvOTY3MXl5cHp0dWs4aG5iY3d0ZWhlcDM5diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0GtVKtagi2GvWuY3vm/giphy.gif',
-    width: 300,
-    height: 300,
-  },
   {
     id: '2',
     title: 'Funny Cat',

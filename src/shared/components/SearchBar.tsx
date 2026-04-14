@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface SearchBarProps {
     placeHolder: string;
@@ -8,7 +8,21 @@ interface SearchBarProps {
 
 export const SearchBar = ({ placeHolder = 'Buscar', onSearch }: SearchBarProps) => {
 
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('');
+
+    useEffect(() => {
+
+        const timeoutId = setTimeout(() => {
+            onSearch(search);
+        }, 700);
+
+        //onSearch(search);
+
+        return () => {
+            clearTimeout(timeoutId);
+        }
+
+    }), [search, onSearch];
 
     const handleSearch = () => {
         onSearch(search);
@@ -22,16 +36,17 @@ export const SearchBar = ({ placeHolder = 'Buscar', onSearch }: SearchBarProps) 
     }
 
     return (
-
-        <div className='search-container'>
-            <input
-                type="text"
-                placeholder={placeHolder}
-                value={search}
-                onChange={(event) => setSearch(event.target.value)}
-                onKeyDown={handleKeyDown}
-            />
-            <button onClick={handleSearch}>Buscar</button>
-        </div>
+        <>
+            <div className='search-container'>
+                <input
+                    type="text"
+                    placeholder={placeHolder}
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                    onKeyDown={handleKeyDown}
+                />
+                <button onClick={handleSearch}>Buscar</button>
+            </div>
+        </>
     )
 }

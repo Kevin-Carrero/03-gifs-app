@@ -1,14 +1,14 @@
 
 interface CustomHeaderProps {
-    tittle: string;
+    title: string;
     description?: string;
 }
 
-export const CustomHeader = ({ tittle, description }: CustomHeaderProps) => {
+export const CustomHeader = ({ title, description }: CustomHeaderProps) => {
     return (
         <>
             <div className='content-center'>
-                <h1>{tittle}</h1>
+                <h1>{title}</h1>
                 {
                     description && (<p> {description}</p>)
                 }

@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CustomHeader > should not render the description when not provided 1`] = `
+<div>
+  <div
+    class="content-center"
+  >
+    <h1>
+      Test Title
+    </h1>
+  </div>
+</div>
+`;
